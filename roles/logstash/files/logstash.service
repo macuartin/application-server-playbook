@@ -1,0 +1,11 @@
+[Unit]
+Description=DF Logstash Agent
+
+[Service]
+Type=forking
+ExecStart=/path/to/logstash/logstash.sh
+SuccessExitStatus=14
+LimitNOFILE=50000
+
+[Install]
+WantedBy=multi-user.target
