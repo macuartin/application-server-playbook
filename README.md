@@ -47,3 +47,11 @@ For more information about the roles task, check /roles
 ### Vars
 
 For the correct use of this playbook please define all the variables you need in the file /vars/main.yml
+
+### Test the Playbook
+
+If you want to test the playbook before running in your cluster, you can use the Vagrantfile defined in this repo and run the follow command
+
+```sh
+ansible-playbook -i ./inventories/hosts main.yml --extra-vars "host=vagrant" --tags "full"
+```
