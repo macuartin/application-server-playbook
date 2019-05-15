@@ -1,7 +1,6 @@
 
 # Application Server Playbook
 
-[![N|Solid](https://digitalfactory.scotiabank.com/assets/6ab770fc2aa46c22481ccd4e669f38c9.svg)](https://digitalfactory.scotiabank.com/)
 
 ## Run Playbook
 
