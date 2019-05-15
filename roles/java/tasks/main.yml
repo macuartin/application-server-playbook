@@ -1,0 +1,14 @@
+---
+
+- name: Install Java
+  unarchive:
+    src: "jdk-8u171-linux-x64.tar.gz"
+    dest: "{{ java_dir }}"
+
+- name: set JAVA_HOME 
+  lineinfile:
+    path: /etc/environment
+    regexp: '^export JAVA_HOME='
+    line: 'export JAVA_HOME=/usr/local/colpatria/java/jdk1.8.0_171'
+
+...

@@ -1,0 +1,38 @@
+---
+
+- hosts: "{{ host }}"
+  become: yes
+  become_user: root
+  vars_files:
+    - ./vars/main.yml
+  tasks:
+  
+    - import_role:
+        name: filesystem
+      tags:
+        - full
+        - filesystem
+
+    - import_role:
+        name: java
+      tags:
+        - full
+        - java
+
+    - import_role:
+        name: logstash
+      tags:
+        - full
+        - logstash
+
+
+    - import_role:
+        name: nginx
+      tags:
+        - full
+        - nginx
+    
+
+
+
+...

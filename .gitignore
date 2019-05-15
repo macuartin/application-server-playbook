@@ -1,0 +1,4 @@
+inventories/digitalfactory
+.vagrant
+*.retry
+roles/*/files/*

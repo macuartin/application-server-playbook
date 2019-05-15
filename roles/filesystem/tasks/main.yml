@@ -1,0 +1,21 @@
+---
+
+- name: Create new filesystem.
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: dfrunner
+    group: digital
+  with_items:
+    -  "{{ general_dir }}"
+    -  "{{ certs_dir }}"
+    -  "{{ logstash_dir }}"
+    -  "{{ deploy_dir }}"
+    -  "{{ java_dir }}"
+    -  "{{ local_dir }}"
+    -  "{{ logs_dir }}"
+    - "{{ project_dir }}"
+    - "{{ project_api_dir }}"
+    - "{{ project_front_dir }}"
+      
+...

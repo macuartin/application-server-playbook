@@ -1,0 +1,42 @@
+---
+
+- name: Download Logstash.
+  get_url:
+    url: https://artifacts.elastic.co/downloads/logstash/{{ logstash_artifac }}
+    dest: "{{ logstash_dir }}"
+    validate_certs: no
+  # environment:
+  #   use_proxy: yes
+  #   http_proxy: "{{ proxy }}"
+  #   https_proxy: "{{ proxy }}"
+
+- name: Install Logstash
+  unarchive:
+    src: "{{ logstash_dir }}/{{ logstash_artifac }}"
+    dest: "{{ logstash_dir }}"
+    remote_src: yes
+
+- name: Create Configuration File
+  copy:
+    src: logstash.conf
+    dest: "{{ logstash_dir }}/logstash.conf"
+
+- name: Create Service File
+  copy:
+    src: logstash.service
+    dest: /etc/systemd/system/logstash.service
+
+- name: Create Bash File
+  copy:
+    src: logstash.sh
+    dest: "{{ logstash_dir }}/logstash.sh"
+    mode: 0755
+
+- name: Make sure logstash is running
+  systemd:
+    state: restarted
+    name: logstash.service
+    enabled: yes
+    daemon_reload: yes
+
+...

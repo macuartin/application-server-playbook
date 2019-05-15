@@ -1,0 +1,25 @@
+---
+
+- name: Install nginx repo.
+  copy:
+    src: nginx.repo
+    dest: /etc/yum.repos.d/nginx.repo
+
+- name: Download and install nginx
+  yum:
+    name: nginx
+    enablerepo: nginx-mainline
+    state: present
+  # environment:
+  #   use_proxy: yes
+  #   http_proxy: "{{ proxy }}"
+  #   https_proxy: "{{ proxy }}"
+
+- name: Make sure nginx is running
+  systemd:
+    state: restarted
+    name: nginx
+    enabled: yes
+    daemon_reload: yes
+
+...

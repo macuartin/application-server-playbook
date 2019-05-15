@@ -1,0 +1,6 @@
+[vagrant]
+192.168.0.17
+
+[all:vars]
+ansible_user=vagrant
+ansible_ssh_pass=vagrant

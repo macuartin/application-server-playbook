@@ -1,0 +1,16 @@
+---
+
+general_dir: 
+project_dir: "{{ general_dir }}/project"
+certs_dir: "{{ general_dir }}/certificates"
+logstash_dir: "{{ general_dir }}/logstash"
+deploy_dir: "{{ general_dir }}/deploy"
+java_dir: "{{ general_dir }}/java"
+local_dir: "{{ general_dir }}/local_conf"
+logs_dir: "{{ general_dir }}/logs"
+project_api_dir: "{{ project_dir }}/api"
+project_front_dir: "{{ project_dir }}/front"
+logstash_artifac: logstash-6.6.0.tar.gz
+proxy: 
+
+...
