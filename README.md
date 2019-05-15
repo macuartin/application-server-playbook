@@ -18,8 +18,8 @@ For more information about Ansible Playbooks See [Run Your First Command and Pla
 | Hosts | Description |
 | ------ | ------ |
 | all | Run playbook for all hosts in inventory file. |
-| pse | Run playbook for PSE hosts in inventory file. |
-| auth | Run playbook for Auth hosts in inventory file. |
+| app1 | Run playbook for App1 hosts in inventory file. |
+| app2 | Run playbook for App2 hosts in inventory file. |
 | prd | Run playbook for Production hosts in inventory file. |
 | ctg | Run playbook for Contingency hosts in inventory file. |
 
